@@ -109,6 +109,7 @@ class RequestHandler(object):
                         kw[k] = v[0]
         if kw is None:
             kw = dict(**request.match_info)
+            logging.info(kw)
         else:
             if not self._has_var_kw_arg and self._named_kw_args:
                 # remove all unamed kw:
@@ -153,7 +154,7 @@ def add_route(app, fn):
 
 def add_routes(app, module_name):
     n = module_name.rfind('.')
-    if n ==(-1):
+    if n == (-1):
         mod = __import__(module_name, globals(), locals())
     else:
         name = module_name[n+1:]

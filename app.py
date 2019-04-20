@@ -79,7 +79,7 @@ async def response_factory(app, handler):
                 resp = web.Response(body=app['__templating__'].get_template(template).render(**r).encode('utf-8'))
                 resp.content_type = 'text/html;charset=utf-8'
                 return resp
-         if isinstance(r, int) and r >= 100 and r < 600:
+        if isinstance(r, int) and r >= 100 and r < 600:
             return web.Response(r)
         if isinstance(r, tuple) and len(r) == 2:
             t, m = r
@@ -112,7 +112,7 @@ async def init(loop):
     init_jinja2(app, filters=dict(datetime=datetime_filter))
     add_routes(app, 'handlers')
     add_static(app)
-    srv = await loop.create_server(app.make_handler(), '127.0.0.1', 8000)
+    srv = await loop.create_server(app._make_handler(), '127.0.0.1', 8000)
     logging.info('server started at http://127.0.0.1:8000...')
     return srv
 
