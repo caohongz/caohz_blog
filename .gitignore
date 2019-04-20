@@ -102,10 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-.idea/encodings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/python.iml
-.idea/workspace.xml
-.idea/libraries/R_User_Library.xml
-.idea/vcs.xml
+.idea/
+.vscode/
+test.db
