@@ -1,7 +1,7 @@
-# config_override.py
+#config_override.py
 
-#configs = {
-#    'db': {
-#        'host': '192.168.147.135'
-#    }
-#}
+configs = {
+    'db': {
+        'host': '127.0.0.1'
+    }
+}
