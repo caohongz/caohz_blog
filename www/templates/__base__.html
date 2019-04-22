@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 
-<!--处理分页导航栏代码-->
-{% macro pagination(page) %}
-    <ul class="uk-pagination uk-flex-center uk-margin-medium-top uk-margin-large-bottom">
+<!--
+{% macro pagination(url, page) %}
+    <ul class="uk-pagination">
         {% if page.has_previous %}
-            <li><a href="?page={{ page.page_index - 1 }}"><span uk-pagination-previous></span></a></li>
+            <li><a href="{{ url }}{{ page.page_index - 1 }}"><i class="uk-icon-angle-double-left"></i></a></li>
         {% else %}
-            <li class="uk-disabled"><a href="#"><span uk-pagination-previous></span></a></li>
+            <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
         {% endif %}
             <li class="uk-active"><span>{{ page.page_index }}</span></li>
         {% if page.has_next %}
-            <li><a href="?page={{ page.page_index + 1 }}"><span uk-pagination-next></span></a></li>
+            <li><a href="{{ url }}{{ page.page_index + 1 }}"><i class="uk-icon-angle-double-right"></i></a></li>
         {% else %}
-            <li class="uk-disabled"><a href="#"><span uk-pagination-next></span></a></li>
+            <li class="uk-disabled"><span><i class="uk-icon-angle-double-right"></i></span></li>
         {% endif %}
     </ul>
 {% endmacro %}
+-->
 
 <html>
 <head>
@@ -81,8 +82,8 @@
                     <a target="_blank" href="#" class="uk-icon-button uk-icon-linkedin-square"></a>
                     <a target="_blank" href="#" class="uk-icon-button uk-icon-twitter"></a>
                 </p>
-                <p>Powered by <a href="#">Awesome Python Webapp</a>. Copyright &copy; 2014. [<a href="/manage/" target="_blank">Manage</a>]</p>
-                <p><a href="http://www.liaoxuefeng.com/" target="_blank">www.liaoxuefeng.com</a>. All rights reserved.</p>
+                <p>Powered by <a href="#">智享小栈</a>. Copyright &copy; 2019. [<a href="/manage/blogs" target="_blank">Manage</a>]</p>
+                <p><a href="http://www.hljchz.cn/" target="_blank">www.hljchz.cn</a>. All rights reserved.</p>
                 <a target="_blank" href="#"><i class="uk-icon-html5" style="font-size:64px; color: #444;"></i></a>
             </div>
         </div>
